@@ -18,6 +18,7 @@ param.num_dots = 500; %number of dots in star-field {for type=starfield}
 param.dot_radius = 0.02182; %radius of dots (in radians) {for starfield}
 param.dot_size = 'static'; %static or distance-relative {for starfield}
 param.dot_occ = 'closest'; %how occluding dots are drawn (closest, sum, or mean) {for starfield}
+param.dot_re_random = 1; %whether to re-randomize dot starting locations (1=randomize, 0=reuse previous) {for starfield}
 param.dot_level = 0; %0 = dot brightness set to 1st level; 1 and 2 = random brightness (0-1st; 0 or 1st) {for starfield}
 param.snap_dots = 0; %1 if apparent dot locations should be rounded to the nearest pixel {for starfield}
 param.sa_mask = deg2rad([0 0 180 0]); %location, size, and direction of solid angle mask [longitude, lattitude, solid_angle, out/in]
@@ -78,7 +79,7 @@ exp_folder = create_exp_dir_G4(exp_name);
 % 11) slip +
 % 12) slip -
 %
-% This scripr generates an associated analog output function and position
+% This script generates an associated analog output function and position
 % function for every pattern, even if the functions are the same between
 % patterns.
 
